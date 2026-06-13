@@ -65,12 +65,12 @@ No cloud. No signup. No GPU needed. Just `make run` — or try it instantly on H
 
 Or open any problem directly in Google Colab — every notebook has an [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CharlesShang/TorchCode/blob/master/templates/01_relu.ipynb) badge.
 
-### Option 0b — Use the judge in Colab (pip)
+### Option 0b — Use the judge in Colab
 
-In Google Colab, install the judge from PyPI so you can run `check(...)` without cloning the repo:
+In Google Colab, install the judge from this repo so `check(...)` uses the same tasks as the notebooks:
 
 ```bash
-!pip install torch-judge
+!pip install -q --force-reinstall --no-deps git+https://github.com/CharlesShang/TorchCode.git@master
 ```
 
 Then in a notebook cell:
@@ -369,7 +369,7 @@ No registration needed. The judge picks it up automatically.
 
 ## 📦 Publishing `torch-judge` to PyPI (maintainers)
 
-The judge is published as a separate package so Colab/users can `pip install torch-judge` without cloning the repo.
+The notebooks install `torch-judge` directly from this GitHub repo so Colab always sees the current task set. For a stable public release, publish the judge package to PyPI so users can also `pip install torch-judge`.
 
 ### Automatic (GitHub Action)
 
@@ -378,7 +378,7 @@ Pushing to `master` after changing the package version triggers [`.github/workfl
 1. **Bump version** in `torch_judge/_version.py` (e.g. `__version__ = "0.1.1"`).
 2. **Configure PyPI Trusted Publisher** (one-time):
    - PyPI → Your project **torch-judge** → **Publishing** → **Add a new pending publisher**
-   - Owner: `duoan`, Repository: `TorchCode`, Workflow: `pypi-publish.yml`, Environment: (leave empty)
+   - Owner: `CharlesShang`, Repository: `TorchCode`, Workflow: `pypi-publish.yml`, Environment: (leave empty)
    - Run the workflow once (push a version bump to `master` or **Actions → Publish torch-judge to PyPI → Run workflow**); PyPI will then link the publisher.
 3. **Release**: commit the version bump and `git push origin master`.
 

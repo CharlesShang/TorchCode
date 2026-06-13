@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Add Colab-only pip install of torch-judge to all notebooks that use torch_judge."""
+"""Add Colab-only torch-judge install to notebooks that use torch_judge."""
 
 import json
 from pathlib import Path
 
 INSTALL_CELL_SOURCE = [
-    "# Install torch-judge in Colab (no-op in JupyterLab/Docker)\n",
+    "# Install the latest torch-judge from this repo in Colab (no-op in JupyterLab/Docker)\n",
     "try:\n",
     "    import google.colab\n",
-    "    get_ipython().run_line_magic('pip', 'install -q torch-judge')\n",
+    "    get_ipython().run_line_magic('pip', 'install -q --force-reinstall --no-deps git+https://github.com/CharlesShang/TorchCode.git@master')\n",
     "except ImportError:\n",
     "    pass\n",
 ]
