@@ -27,7 +27,7 @@ Practice implementing operators and architectures from scratch — the exact ski
 [![GitHub stars](https://img.shields.io/github/stars/CharlesShang/TorchCode?style=social)](https://github.com/CharlesShang/TorchCode)
 [![GitHub Container Registry](https://img.shields.io/badge/ghcr.io-TorchCode-blue?style=flat-square&logo=github)](https://ghcr.io/duoan/torchcode)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Spaces-TorchCode-blue?style=flat-square)](https://huggingface.co/spaces/duoan/TorchCode)
-![Problems](https://img.shields.io/badge/problems-83-orange?style=flat-square)
+![Problems](https://img.shields.io/badge/problems-84-orange?style=flat-square)
 ![GPU](https://img.shields.io/badge/GPU-not%20required-brightgreen?style=flat-square)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=CharlesShang/TorchCode&type=Date)](https://star-history.com/#CharlesShang/TorchCode&Date)
@@ -44,7 +44,7 @@ TorchCode gives you a **structured practice environment** with:
 
 | | Feature | |
 |---|---|---|
-| 🧩 | **83 curated problems** | The most frequently asked PyTorch interview topics |
+| 🧩 | **84 curated problems** | The most frequently asked PyTorch interview topics |
 | ⚖️ | **Automated judge** | Correctness checks, gradient verification, and timing |
 | 🎨 | **Instant feedback** | Colored pass/fail per test case, just like competitive programming |
 | 💡 | **Hints when stuck** | Nudges without full spoilers |
@@ -218,6 +218,7 @@ If you're interviewing for any role touching LLMs or Transformers, expect at lea
 | 53 | <a href="https://github.com/CharlesShang/TorchCode/blob/master/templates/53_euler_flow_sampler.ipynb" target="_blank">Euler Flow Sampler</a> <a href="https://colab.research.google.com/github/CharlesShang/TorchCode/blob/master/templates/53_euler_flow_sampler.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `euler_flow_sample(model, x0, steps)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | ⭐ | ODE sampling, rectified flow integration |
 | 54 | <a href="https://github.com/CharlesShang/TorchCode/blob/master/templates/54_logit_normal_timestep_sampling.ipynb" target="_blank">Logit-Normal Timestep Sampling</a> <a href="https://colab.research.google.com/github/CharlesShang/TorchCode/blob/master/templates/54_logit_normal_timestep_sampling.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `sample_logit_normal_timesteps(batch_size)` | ![Medium](https://img.shields.io/badge/Medium-FF9800?style=flat-square) | ⭐ | Rectified-flow timestep distribution, sigmoid normal |
 | 55 | <a href="https://github.com/CharlesShang/TorchCode/blob/master/templates/55_rope_2d_image_tokens.ipynb" target="_blank">2D RoPE for Image Tokens</a> <a href="https://colab.research.google.com/github/CharlesShang/TorchCode/blob/master/templates/55_rope_2d_image_tokens.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `apply_2d_rope(x, H, W)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | ⭐ | 2D rotary embeddings, image patch positions |
+| 84 | <a href="https://github.com/CharlesShang/TorchCode/blob/master/templates/84_multimodal_rope.ipynb" target="_blank">Multimodal RoPE (M-RoPE)</a> <a href="https://colab.research.google.com/github/CharlesShang/TorchCode/blob/master/templates/84_multimodal_rope.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" height="20"></a> | `apply_multimodal_rope(q, k, position_ids, sections)` | ![Hard](https://img.shields.io/badge/Hard-F44336?style=flat-square) | 💡 | Text/image/video positions, 3D rotary sections, Qwen-style M-RoPE |
 
 ### 🧬 Modern LLM Systems & Architecture
 
@@ -308,7 +309,7 @@ status()                    # Progress dashboard — solved / attempted / todo
 | **2** | 🧠 Attention Deep Dive | SDPA → MHA → Cross-Attn → Causal → GQA → KV Cache → Sliding Window → RoPE → Linear Attn → Flash Attn | 3–4 hrs |
 | **3** | 🏗️ Architecture + Training | GPT-2 Block → LoRA → MoE → ViT Patch → Sinusoidal PE → SGD Momentum → Adam → Cosine LR → Grad Clip → Grad Accumulation → Kaiming Init | 4–5 hrs |
 | **4** | 🎯 Inference + Advanced | Top-k/p Sampling → Beam Search → Speculative Decoding → CLIP Loss → BPE → INT8 Quant → DPO Loss → GRPO Loss → PPO Loss + speed run | 4–5 hrs |
-| **5** | 🖼️ MMDiT / DiT | Patchify → Timestep Embedding → AdaLN-Zero → CFG → Rectified Flow → Euler Sampler → Logit-Normal Sampling → 2D RoPE → DiT Block → MMDiT Joint Attention | 5–7 hrs |
+| **5** | 🖼️ MMDiT / DiT | Patchify → Timestep Embedding → AdaLN-Zero → CFG → Rectified Flow → Euler Sampler → Logit-Normal Sampling → 2D RoPE → M-RoPE → DiT Block → MMDiT Joint Attention | 5–7 hrs |
 | **6** | 🧬 Modern LLM Systems | QK Norm → RoPE Scaling → MLA → Paged KV Cache → Prefix Cache → Continuous Batching → Speculative Verification → Multi-Token Prediction → NF4 → FP8 → LoRA Merge → Fused RMSNorm | 6–8 hrs |
 | **7** | 🖼️ Image / Video Processing | RGB→Gray → Bilinear Resize → Sobel → IoU → NMS → Temporal Sampling → Temporal Pooling → Tubelet Patchify | 4–5 hrs |
 | **8** | 🧵 Python Concurrency | Thread-safe Counter → Threaded Map → Blocking Queue → Process Pool → Async Gather Limit → Async Timeout → Async Retry → Async Queue Pipeline | 4–5 hrs |
